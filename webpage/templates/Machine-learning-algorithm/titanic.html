@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="gender">Sex: </label>
+                <select name="gender" class="form-select">
+                    <option value="male" selected="selected">Male</option>
+                    <option value="female" selected="selected">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Pclass">Social class: </label>
+                <select name="Pclass" class="form-select">
+                    <option value="1" selected="selected">First class</option>
+                    <option value="2" selected="selected">Second class</option>
+                    <option value="3" selected="selected">Third class</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="embark">Embarked: </label>
+                <select name="embark" class="form-select">
+                    <option value="S" selected="selected">Southampton</option>
+                    <option value="C" selected="selected">Cherbourg</option>
+                    <option value="Q" selected="selected">Queenstown</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-outline-light text-dark" type="submit" value="Submit">Start the analysis</button>
+            </div>
+        </form>
+    </div>
+    <div class="col bg-light">
+        <h3>Prediction:</h3>
+        <div class="container text-center">
+            {% if post == 1 %}
+            <p>There is a high probability that you will survive the titanic disaster.</p>
+            {% elif post == 0 %}
+            <p>There is a high probability that you will not survive the titanic disaster.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
