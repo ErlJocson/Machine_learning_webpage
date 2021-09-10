@@ -12,6 +12,7 @@ def lungCancerPrediction(data):
     return prediction
 
 def titanicDataset(data):
+    # 77%
     model = joblib.load("MachineLearningModel/titanic.joblib")
     prediction = model.predict(DataFrame(data, columns= ["Pclass","Sex","Embarked"]))
     return prediction
