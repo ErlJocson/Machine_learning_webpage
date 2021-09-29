@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h4 class="text-center">Health prediction</h4>
+        <ul>
+            <li>
+                <a href="{{ url_for('heartAttact') }}" class="btn">Heart attack prediction</a>
+            </li>
+            <li>
+                <a href="{{ url_for('lungCancer') }}" class="btn">Lung cancer prediction</a>
+            </li>
+            <li>
+                <a href="{{ url_for('breastCancer') }}" class="btn">Breast cancer operation survival</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <h4 class="text-center">Pricing prediction</h4>
+        <ul>
+            <li>
+                <a href="{{ url_for('housePrediction')}}" class="btn">House price prediction</a>
+            </li>
+            <li>
+                <a href="{{ url_for('lotPrediction')}}" class="btn">Lot price prediction</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <h4 class="bg-gradient">Product recommendations</h4>
+        <ul>
+            <li>
+                <a href="{{ url_for('movieRecommendation')}}" class="btn">Movie recommendation</a>
+            </li>
+            <li>
+                <a href="{{ url_for('animeRecommendation')}}" class="btn">Anime recommendation</a>
+            </li>
+            <li>
+                <a href="{{ url_for('musicRecommendation')}}" class="btn">Music recommendation</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <h4 class="text-center">Survival prediction</h4>
+        <ul>
+            <li>
+                <a href="{{ url_for('titanicPrediction')}}" class="btn">Titanic disaster</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col"></div>
+</div>
+{% endblock %}
