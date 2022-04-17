@@ -93,11 +93,14 @@ def lungCancer():
 @app.route('/products/breast-cancer', methods = ["POST", "GET"])
 @login_required
 def breastCancer():
-    age = request.form["age"]
-    axil_nodes = request.form["axil_nodes"]
-    data = [age, axil_nodes]
-    prediction = breastCancerPrediction(np.array([data]))
-    return render_template('Machine-learning-algorithm/breast-cancer-opSurv.html', title="Breast cancer operation survival", post=prediction)
+    if request.method == "POST":
+        age = request.form["age"]
+        axil_nodes = request.form["axil_nodes"]
+        data = [age, axil_nodes]
+        prediction = breastCancerPrediction(np.array([data]))
+        print(prediction)
+        return render_template('Machine-learning-algorithm/breast-cancer-opSurv.html', title="Breast cancer operation survival", post=prediction)
+    return render_template('Machine-learning-algorithm/breast-cancer-opSurv.html', title="Breast cancer operation survival")
 
 @app.route('/products/movie-recommendation', methods=["POST", "GET"])
 @login_required
